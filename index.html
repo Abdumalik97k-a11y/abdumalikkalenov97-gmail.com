@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Osh Travel Guide — Discover Osh, Kyrgyzstan</title>
+<meta name="description" content="Plan your trip to Osh: places, routes, food, hotels, map and practical tips.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- HEADER -->
+<header id="top" class="nav">
+  <a href="#home" class="logo">OSH <span>TRAVEL</span></a>
+  <nav id="menu">
+    <a href="#home" data-i18n="home">Home</a><a href="#places" data-i18n="places">Places</a>
+    <a href="#food" data-i18n="food">Food</a><a href="#hotels" data-i18n="hotels">Hotels</a>
+    <a href="#map" data-i18n="map">Map</a><a href="#about" data-i18n="about">About Osh</a>
+    <a href="#contact" data-i18n="contact">Contact</a>
+  </nav>
+  <div class="tools">
+    <select id="lang" aria-label="Language"><option value="ky">Кыргызча</option><option value="ru">Русский</option><option value="en" selected>English</option></select>
+    <button id="theme" aria-label="Toggle dark mode">◐</button>
+    <button id="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-in">
+    <h1 data-i18n="h1">Discover Osh</h1>
+    <p data-i18n="sub">Explore the ancient heart of Kyrgyzstan</p>
+    <div class="btns"><a class="btn gold" href="#places" data-i18n="b1">Explore Places</a><a class="btn ghost" href="#trip" data-i18n="b2">Plan My Trip</a></div>
+    <div class="search"><input id="q" type="search" autocomplete="off" placeholder="Where do you want to go?" data-i18n-ph="ph"><div id="results"></div></div>
+  </div>
+</section>
+<div class="orn"></div>
+
+<main>
+<section id="places" class="sec reveal">
+  <h2>Popular Places</h2>
+  <div class="chips" id="filters"></div>
+  <div class="grid" id="placeGrid"></div>
+</section>
+
+<section id="routes" class="sec alt reveal"><h2>Best Routes Around Osh</h2><div class="grid" id="routeGrid"></div></section>
+
+<section id="map" class="sec reveal"><h2>Interactive Map</h2><div id="leaflet"></div></section>
+
+<section id="food" class="sec alt reveal"><h2>Taste Osh</h2><div class="grid" id="foodGrid"></div></section>
+
+<section id="hotels" class="sec reveal"><h2>Where to Stay</h2><p class="note">Demo listings — check current prices before booking.</p><div class="grid" id="hotelGrid"></div></section>
+
+<section id="transport" class="sec alt reveal">
+  <h2>How to Move Around Osh</h2>
+  <div class="grid" id="transGrid"></div>
+  <div class="panel calc"><h3>Taxi fare calculator</h3>
+    <label>Distance (km)<input id="km" type="number" min="0" value="5"></label>
+    <label>Price per km (som)<input id="ppk" type="number" min="0" value="25"></label>
+    <p class="big">Estimated taxi price: <b id="fare">125 som</b></p></div>
+</section>
+
+<section id="weather" class="sec reveal"><h2>Weather in Osh</h2><div class="panel weather" id="wx"></div></section>
+
+<section id="trip" class="sec alt reveal"><h2>My Trip</h2>
+  <div class="panel"><div class="stats" id="tripStats"></div><ul id="tripList"></ul><button class="btn red" id="clearTrip">Clear trip</button></div>
+</section>
+
+<section id="about" class="sec reveal"><h2>About Osh</h2>
+  <div class="grid about">
+    <div class="panel"><h3>One of the oldest cities</h3><p>Osh is among the oldest cities in Central Asia, with a history of roughly 3,000 years on the Silk Road.</p></div>
+    <div class="panel"><h3>UNESCO World Heritage</h3><p>Sulaiman-Too, the sacred mountain rising from the city, is a UNESCO World Heritage Site.</p></div>
+    <div class="panel"><h3>Fergana Valley</h3><p>The city sits at the eastern edge of the fertile Fergana Valley, close to the Uzbek border.</p></div>
+    <div class="panel"><h3>Cultural centre</h3><p>Often called the southern capital, Osh is a key cultural and historical hub of Kyrgyzstan.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="sec alt reveal"><h2>Emergency & Contact</h2>
+  <div class="grid em">
+    <a class="btn red" href="tel:102">🚓 Police 102</a><a class="btn red" href="tel:103">🚑 Ambulance 103</a><a class="btn red" href="tel:101">🚒 Fire 101</a>
+  </div>
+  <p class="note">Questions? hello@oshtravel.example</p>
+</section>
+</main>
+
+<footer>
+  <div class="orn"></div>
+  <h3>Osh Travel Guide</h3>
+  <nav><a href="#places">Places</a><a href="#routes">Routes</a><a href="#food">Food</a><a href="#hotels">Hotels</a><a href="#map">Map</a><a href="#contact">Contact</a></nav>
+  <div class="social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="Telegram">tg</a><a href="#" aria-label="YouTube">yt</a></div>
+  <p>© 2026 Osh Travel Guide</p>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+<div id="modal" class="modal" aria-hidden="true"><div class="box" id="modalBox"></div></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
